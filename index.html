@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather app</title>
+
+    <!-- 
+        - #CUSTOM CSS LINK
+     -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- 
+        - #BOXIXON LINK
+     -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- 
+        - #FONT AWESOME CDN
+     -->
+    <script src="https://kit.fontawesome.com/9910778df0.js" crossorigin="anonymous"></script>
+
+    <!-- 
+        - #WEATHER API CDN
+     -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <aside class="aside">
+            <div class="top__aside">
+                <a href="#">
+                    <i class='bx bx-wind'></i>
+                </a>
+            </div>
+
+            <div class="bottom__aside">
+                <li class="active">
+                    <a href="#">
+                        <i class='bx bxs-cloud-lightning'></i>
+                    </a>
+                    <span>Weather</span>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bx-menu'></i>
+                    </a>
+                    <span>Cities</span>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bx-map-alt'></i>
+                    </a>
+                    <span>Map</span>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bx-cog'></i>
+                    </a>
+                    <span>Settings</span>
+                </li>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="top__main">
+
+                <div class="input_box">
+
+                    <input type="text" class="input__field" placeholder="Search for cities">
+
+                    <button class="btn">
+                        <i class='bx bx-search'></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="bottom__main">
+                <div class="first__div">
+                    <span class="subtitle">TODAY'S FORECAST</span>
+
+                    <div class="data__wrapper"></div>
+
+                </div>
+
+                <div class="second__div">
+                    <span class="subtitle">TODAY'S FORECAST</span>
+
+                </div>
+            </div>
+        </main>
+
+        <div class="right ">
+            <span class="subtitle">7-DAY FORECAST</span>
+
+            <div class="right__wrapper">
+<!-- 
+                <div>
+                    <h4>Today</h4>
+                    <li>
+                        <i class='bx bxs-sun'></i>
+                        <span>Sunny</span>
+                    </li>
+                    <h3>36/22</h3>
+                </div>
+
+                <div>
+                    <h4>Tue</h4>
+                    <li>
+                        <i class='bx bxs-sun'></i>
+                        <span>Sunny</span>
+                    </li>
+                    <h3>37/21</h3>
+                </div>
+
+                <div>
+                    <h4>Wed</h4>
+                    <li>
+                        <i class='bx bxs-sun'></i>
+                        <span>Sunny</span>
+                    </li>
+                    <h3>37/21</h3>
+                </div>
+
+                <div>
+                    <h4>Thu</h4>
+                    <li>
+                        <i class='bx bxs-sun'></i>
+                        <span>Cloudly</span>
+                    </li>
+                    <h3>37/21</h3>
+                </div>
+
+                <div>
+                    <h4>Fri</h4>
+                    <li>
+                        <i class='bx bxs-sun'></i>
+                        <span>Cloudly</span>
+                    </li>
+                    <h3>37/21</h3>
+                </div>
+
+                <div>
+                    <h4>Sat</h4>
+                    <li>
+                        <i class='bx bxs-sun'></i>
+                        <span>Rainy</span>
+                    </li>
+                    <h3>37/21</h3>
+                </div>
+
+                <div>
+                    <h4>Sun</h4>
+                    <li>
+                        <i class='bx bxs-sun'></i>
+                        <span>Storm</span>
+                    </li>
+                    <h3>37/21</h3>
+                </div> -->
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- 
+        - #CUSTOM JS LINK
+     -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
