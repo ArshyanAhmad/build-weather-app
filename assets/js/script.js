@@ -122,6 +122,7 @@ function displayForecast(data) {
             </a>
             <h2>${hour.temp_c}&deg;</h2>
         `
+        document.querySelector('.header').style.gridTemplateColumns = "80px 2.4fr 1fr";
         document.querySelector('.data__wrapper').appendChild(div)
 
     });
@@ -130,6 +131,7 @@ function displayForecast(data) {
 
 
 function displayTodayForecast(data) {
+    console.log(data);
 
     const rainTemprature = data.current.temp_c;
     const windSpeed = data.current.wind_kph;
@@ -171,6 +173,7 @@ function displayTodayForecast(data) {
 </div> `
     div.classList.add('show__data__second')
     document.querySelector('.second__div').style.display = 'block'
+    document.querySelector('.right').style.display = 'block'
     document.querySelector('.second__div').appendChild(div)
 
 }

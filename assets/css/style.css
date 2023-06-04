@@ -23,7 +23,7 @@ li {
 :root {
     --primary-color: #202b3b;
     --text-color: #9399a2;
-    --orage-color: #f8d500;
+    --orange-color: #f8d500;
     --bg-color: #0b131e;
     --white-color: #fff;
     --grey-color: #dde0e4;
@@ -45,7 +45,7 @@ li {
     background-color: var(--bg-color);
     padding: 30px;
     display: grid;
-    grid-template-columns: 80px 2.4fr 1fr;
+    grid-template-columns: 80px 1fr;
     gap: 25px;
 }
 
@@ -193,7 +193,7 @@ li {
 
 .show__data .main__icon i {
     font-size: 150px;
-    color: var(--orage-color);
+    color: var(--orange-color);
 }
 
 .main .first__div {
@@ -211,6 +211,21 @@ li {
     overflow-x: scroll;
 }
 
+.main .data__wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.main .data__wrapper::-webkit-scrollbar-thumb {
+    border-radius: var(--border-10);
+    background-color: var(--secondary-color);
+    transition: var(--transition-1);
+}
+
+.main .data__wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color);
+    cursor: pointer;
+}
+
 .subtitle {
     color: var(--text-color);
     font-weight: 600;
@@ -220,6 +235,7 @@ li {
 .data__wrapper div {
     width: 100px;
     border-right: 1px solid var(--secondary-color);
+    padding: 10px 20px 10px 20px;
     display: grid;
     place-items: center;
 }
@@ -231,7 +247,7 @@ li {
 
 .data__wrapper div h4 {
     color: var(--text-color);
-    font-size: 14px;
+    font-size: 11px;
 }
 
 .data__wrapper div h2 {
@@ -242,12 +258,12 @@ li {
 .data__wrapper div i {
     padding: 5px 0;
     font-size: 40px;
-    color: var(--grey-color);
+    color: var(--orange-color);
 }
 
 
 .second__div {
-    margin-top: 20px;
+    margin-top: 10px;
     background-color: var(--primary-color);
     border-radius: var(--border-10);
     padding: 20px;
@@ -290,6 +306,7 @@ li {
     background-color: var(--primary-color);
     border-radius: var(--border-10);
     padding: 40px 40px 40px 40px;
+    display: none;
 }
 
 .right__wrapper {
@@ -319,7 +336,7 @@ li {
 
 .right__wrapper div li i {
     font-size: 40px;
-    color: var(--orage-color);
+    color: var(--orange-color);
 }
 
 .right__wrapper div span {
