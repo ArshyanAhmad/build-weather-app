@@ -1,6 +1,10 @@
 const api_key = 'e64c322c8ff446bc8b135947230306'
 const input_querry = document.querySelector('.input__field')
 const searchBtn = document.querySelector('.btn')
+const themeToggle = document.querySelector('.theme');
+const lightTheme = document.getElementById('lightTheme');
+const darkTheme = document.getElementById('darkTheme');
+
 
 const weatherIconMap = {
     '1000': 'wi wi-day-sunny',
@@ -207,3 +211,12 @@ function displayTodayForecast(data) {
     document.querySelector('.second__div').appendChild(div)
 
 }
+
+
+// Add an event listener for the click event
+themeToggle.addEventListener('click', function () {
+    // Toggle the 'light' class on the lightTheme element
+    themeToggle.classList.toggle('active')
+    darkTheme.classList.toggle('active')
+    document.body.classList.toggle('active')
+});
