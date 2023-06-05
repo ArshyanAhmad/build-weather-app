@@ -53,26 +53,37 @@ const weatherIconMap = {
 };
 
 
-searchBtn.addEventListener('click', () => {
+function getFetchData() {
+
     const query = input_querry.value;
-    const endpoint = `https://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${query}&days=1`;
 
-    fetch(endpoint)
-        .then(response => response.json())
-        .then(data => {
-            // Process the data returned from the API
-            console.log(data);
-            // displayWeatherTimeline(data.forecast.forecastday[0].hour);
-            displayData(data)
-            displayForecast(data)
-            displayTodayForecast(data)
-            // console.log(data.forecast);
-        })
-        .catch(error => {
-            // Handle any errors that occurred during the request
-            console.log(error);
-        });
+    if (query !== '') {
 
+        const endpoint = `https://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${query}&days=1`;
+
+        fetch(endpoint)
+            .then(response => response.json())
+            .then(data => {
+                // Process the data returned from the API
+                displayData(data)
+                displayForecast(data)
+                displayTodayForecast(data)
+            })
+            .catch(error => {
+                // Handle any errors that occurred during the request
+                console.log(error);
+            });
+    }
+
+}
+
+searchBtn.addEventListener('click', getFetchData)
+window.addEventListener('keydown', function () {
+    // Check if the Enter key was pressed
+    if (event.keyCode === 13 || event.code === 'Enter') {
+        // Show the data or perform any action
+        getFetchData()
+    }
 })
 
 
@@ -95,6 +106,12 @@ function displayData(data) {
         <i class='${iconImage}'></i>
     </div>`
 
+    const existingDiv = document.querySelector('.show__data')
+
+    if (existingDiv) {
+        existingDiv.remove(); // Remove the existing data
+    }
+
     div.classList.add('show__data')
     document.querySelector('.top__main').appendChild(div)
     input_querry.value = '';
@@ -102,11 +119,16 @@ function displayData(data) {
 
 
 function displayForecast(data) {
-    console.log(data);
+
+    const first__div = document.querySelector('.first__div')
+    const dataWrapper = document.querySelector('.data__wrapper')
 
     const hour = data.forecast.forecastday[0].hour
-    const first__div = document.querySelector('.first__div')
     first__div.style.display = 'inherit'
+
+    while (dataWrapper.firstChild) {
+        dataWrapper.firstChild.remove(); // Remove the existing data
+    }
 
     hour.forEach(hour => {
         const timestamp = new Date(hour.time_epoch * 1000)
@@ -122,8 +144,9 @@ function displayForecast(data) {
             </a>
             <h2>${hour.temp_c}&deg;</h2>
         `
+
         document.querySelector('.header').style.gridTemplateColumns = "80px 2.4fr 1fr";
-        document.querySelector('.data__wrapper').appendChild(div)
+        dataWrapper.appendChild(div)
 
     });
 
@@ -131,7 +154,6 @@ function displayForecast(data) {
 
 
 function displayTodayForecast(data) {
-    console.log(data);
 
     const rainTemprature = data.current.temp_c;
     const windSpeed = data.current.wind_kph;
@@ -171,6 +193,14 @@ function displayTodayForecast(data) {
     </li>
     <h2>${uv}</h2>
 </div> `
+
+    const existingDiv = document.querySelector('.show__data__second')
+
+    if (existingDiv) {
+        existingDiv.remove(); // Remove the existing data
+    }
+
+
     div.classList.add('show__data__second')
     document.querySelector('.second__div').style.display = 'block'
     document.querySelector('.right').style.display = 'block'

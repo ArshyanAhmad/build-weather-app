@@ -43,7 +43,7 @@ li {
     width: 100%;
     height: 100vh;
     background-color: var(--bg-color);
-    padding: 30px;
+    padding: 20px ;
     display: grid;
     grid-template-columns: 80px 1fr;
     gap: 25px;
@@ -137,7 +137,7 @@ li {
 }
 
 .main .input_box button:hover i {
-    transform: translateY(-2px);
+    transform: scale(1.2);
 }
 
 .main .input__field {
@@ -261,9 +261,8 @@ li {
     color: var(--orange-color);
 }
 
-
 .second__div {
-    margin-top: 10px;
+    margin-top: 27px;
     background-color: var(--primary-color);
     border-radius: var(--border-10);
     padding: 20px;
